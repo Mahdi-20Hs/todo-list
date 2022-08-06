@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+*{
+  font-family: 'Raleway', sans-serif;
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.top-section{
+  grid-column: 2/-1;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: 1fr;
+  background-color: lightblue;
+  height: 55px;
+  padding: 5px;
+  gap: 30px;
+}
+
+.top-section .search-section{
+  grid-column: 2/3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.search-section .search-icon{
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(321deg) brightness(106%) contrast(100%);
+}
+.search-section .search-bar{
+  height: 30px;
+  width: 200px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  transition-duration: 0.3s;
+}
+.search-section .search-bar:focus{
+  width: 400px;
+}
+.top-section .account{
+  grid-column: 3/-1;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-image: url('../img/photo_2022-06-30_18-42-06.jpg');
+  background-size: cover;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.nav-list{
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  background-color: rgb(16, 16, 32);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px 0;
+  gap: 30px;
+  transition-duration: 0.2s;
+  width: 65px;
+}
+.nav-list:hover{
+  width: 200px;
+}
+.nav-list .icon{
+  width: 30px;
+  height: auto;
+  filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(321deg) brightness(106%) contrast(100%);
+}
+.nav-list div{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  transition-duration: 0.2s;
+  width: 100%;
+  padding: 5px 16px;
+}
+.nav-list div:hover{
+  background-color:#ff00006c ;
+}
+.nav-list h3{
+  visibility: hidden;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 1.3rem;
+}
+.nav-list .home{
+  margin-top: 16px;
+}
+.nav-list .settings{
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.container{
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+}
