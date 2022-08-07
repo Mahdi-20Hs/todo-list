@@ -112,4 +112,85 @@ body{
 .container{
   grid-column: 2/-1;
   grid-row: 2/-1;
+  position: relative;
+}
+.form-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.37);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+.task-form{
+  width: 30%;
+  height: 300px;
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+  padding: 10px;
+  transform: scale(0);
+  transition-duration: 0.3s;
+}
+
+.task-form .form-btns{
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.form-btns button{
+  font-size: 1.2rem;
+  width: 100px;
+  border: none;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.form-btns .addBtn{
+  background-color: lightgreen;
+}
+
+.form-btns .cancelBtn{
+  background-color: lightcoral;
+}
+
+.tasks-container{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.tasks-container .task-element{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.tasks-container .addTaskBtn{
+  background-color: #808080;
+  font-size: 2.3rem;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+.task-delete-btn{
+  background-image: url('../img/trash-can-outline.svg');
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  filter: invert(53%) sepia(11%) saturate(0%) hue-rotate(186deg) brightness(92%) contrast(79%);
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.task-delete-btn:hover{
+  filter: invert(9%) sepia(96%) saturate(5625%) hue-rotate(2deg) brightness(97%) contrast(113%);
 }

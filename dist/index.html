@@ -40,6 +40,36 @@
       <h3>Settings</h3>
     </div>
   </div>
-  <div class="container"></div>
+  <div class="container">
+
+    <div class="form-container">
+      <div class="task-form">
+        <label for="title" class="titleLabel">Title:</label>
+        <input type="text" id="titleInput" name="titleInput">
+
+        <label for="dueDate">Due Date:</label>
+        <input type="date" name="dueDate" id="dueDate">
+  
+        <label for="description" class="descriptionLabel">Description:</label>
+        <input type="text" id="descriptionInput" name="descriptionInput">
+  
+        <label for="priority" class="priorityLabel">Priority:</label>
+        <select name="priority" id="priorityInput">
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+  
+        <label for="notes">Notes:</label>
+        <textarea name="notes" id="notesInput" cols="30" rows="10"></textarea>
+  
+        <div class="form-btns">
+          <button class="add-btn">Add</button>
+          <button class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
