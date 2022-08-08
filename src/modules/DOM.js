@@ -18,10 +18,8 @@ let cancelBtn = document.querySelector('.cancel-btn');
 export {formContainer, taskForm, addBtn, cancelBtn};
 
 let container = document.querySelector('.container');
+let sidebar = createElements('div', 'sidebar');
 let tasksContainer = createElements('div', 'tasks-container');
 let addTaskBtn = createElements('div', 'addTaskBtn', '+');
 
-export {tasksContainer, addTaskBtn, container};
-
-let taskDeleteBtns = document.querySelectorAll('.task-delete-btn');
-export {taskDeleteBtns}
+export {tasksContainer, sidebar,  addTaskBtn, container};

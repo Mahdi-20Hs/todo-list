@@ -12,17 +12,20 @@ function hideForm(){
   formContainer.style.visibility = 'hidden';
 }
 
+
 function bindEventsToForm(arr){
-  
+
   addBtn.addEventListener('click', () => {
     addTaskToArr(arr);
     renderTasks(arr);
     hideForm();
+
   }, {once: true})
   
   cancelBtn.addEventListener('click', () => {
     hideForm();
   });
+  
 }
 
 export {showForm, hideForm, bindEventsToForm};

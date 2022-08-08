@@ -1,5 +1,9 @@
 import { tasksContainer, addTaskBtn } from "./DOM";
 import { createElements } from "./imports";
+import { updateArrays } from "./imports";
+
+let deleteBtns = []
+
 
 function createTaskElement(task){
   let element = createElements('div', 'task-element');
@@ -9,30 +13,24 @@ function createTaskElement(task){
 
   let title = createElements('div', 'task-title', task.title);
 
-  let priorityElement = createElements('select', 'task-priority');
-  let high = createElements('option',undefined, 'High');
-  let medium = createElements('option',undefined, 'Medium')
-  let low = createElements('option',undefined, 'Low')
+  let priorityElement = createElements('div', 'task-priority');
+  priorityElement.textContent = task.priority;
 
-  if(task.priority == 'High'){
-    high.setAttribute('selected', 'selected')
-  }else if(task.priority == 'Medium'){
-    medium.setAttribute('selected', 'selected');
-  }else{
-    low.setAttribute('selected', 'selected');
+  if(task.checked === true){
+    checkbox.checked = 'checked';
+    title.classList.add('checked');
+    priorityElement.classList.add('checked');
   }
   
-  priorityElement.append(high, medium, low);
-
-  let dueDate = createElements('input', 'task-due-date');
-  dueDate.value = task.dueDate;
+  let dueDate = createElements('div', 'task-due-date');
+  dueDate.textContent = task.dueDate;
 
   let deleteBtn = createElements('div', 'task-delete-btn');
+  deleteBtns.push(deleteBtn);
 
   element.append(checkbox, title, priorityElement, dueDate, deleteBtn);
   return element
 }
-
 function renderTasks(tasks){
   tasksContainer.innerHTML = '';
   for(let i in tasks){
@@ -40,6 +38,7 @@ function renderTasks(tasks){
     tasksContainer.appendChild(taskElement);
   }
   tasksContainer.appendChild(addTaskBtn);
+  updateArrays()
 }
 
-export {renderTasks}
+export {renderTasks, deleteBtns}

@@ -113,6 +113,9 @@ body{
   grid-column: 2/-1;
   grid-row: 2/-1;
   position: relative;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1fr;
 }
 .form-container{
   position: absolute;
@@ -161,6 +164,8 @@ body{
 }
 
 .tasks-container{
+  grid-column: 1/2;
+  grid-row: 2/-1;
   border: 1px solid red;
   display: flex;
   flex-direction: column;
@@ -174,7 +179,17 @@ body{
   justify-content: flex-start;
   gap: 10px;
 }
-
+.task-element .task-title{
+  cursor: pointer;
+}
+.task-element .task-title:hover{
+  text-decoration: underline;
+}
+.task-element .task-title.checked, .task-priority.checked{
+  text-decoration: line-through;
+  opacity: 0.5;
+  cursor: default;
+}
 .tasks-container .addTaskBtn{
   background-color: #808080;
   font-size: 2.3rem;
@@ -189,8 +204,18 @@ body{
   height: 20px;
   filter: invert(53%) sepia(11%) saturate(0%) hue-rotate(186deg) brightness(92%) contrast(79%);
   cursor: pointer;
-  transition-duration: 0.3s;
+  
 }
 .task-delete-btn:hover{
   filter: invert(9%) sepia(96%) saturate(5625%) hue-rotate(2deg) brightness(97%) contrast(113%);
+}
+
+.sidebar{
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.3rem;
+
 }

@@ -7,6 +7,7 @@ function CreateTask(){
   task.description = description.value;
   task.priority = priority.value;
   task.notes = notes.value;
+  task.checked = false;
   return task
 }
 
