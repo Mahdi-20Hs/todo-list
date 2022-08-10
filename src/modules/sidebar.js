@@ -10,15 +10,18 @@ let dateLabel = createElements('div', 'date-label', 'Due Date:')
 let dateDiv = createElements('div', 'side-date-div');
 dateDiv.append(dateLabel, sideDate);
 
-
-let sidePriority = createElements('select', 'side-selection');
+let priorityDiv = createElements('div', 'side-priority-div');
+let priorityLabel = createElements('div', 'side-priority-label');
+priorityLabel.textContent = 'Priority';
+let sidePriority = createElements('select', 'side-priority');
 let high = createElements('option',undefined, 'High');
 let medium = createElements('option',undefined, 'Medium');
 let low = createElements('option',undefined, 'Low');
 sidePriority.append(high, medium, low);
+priorityDiv.append(priorityLabel, sidePriority)
 let priorities = [high, medium, low]
 
-let sideNote = createElements('textarea', 'side-note');
+let sideNote = createElements('div', 'side-note');
 
 function populateSidebar(arr, index){
   let task = arr[index];
@@ -37,10 +40,10 @@ function populateSidebar(arr, index){
     low.setAttribute('selected', 'selected');
   }
 
-  sideNote.textContent = task.notes;
+  sideNote.textContent = `Notes: ${task.notes}`;
 
   sidebar.innerHTML = '';
-  sidebar.append(sideTitle, dateDiv, sideDescription, sidePriority, sideNote);
+  sidebar.append(sideTitle, dateDiv, sideDescription, priorityDiv, sideNote);
 }
 
 const emptyEle = createElements('h1', 'empty', 'Select a task');
@@ -60,4 +63,4 @@ function emptySidebar(arr, index){
     sidebar.append(emptyEle);
   }
 }
-export {populateSidebar, emptySidebar, sideTitle, sideDate};
+export {populateSidebar, emptySidebar, sideTitle, sideDate, sidePriority};

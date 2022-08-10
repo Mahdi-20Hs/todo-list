@@ -6,6 +6,7 @@ import { deleteTask } from "./deleteTask";
 import { populateSidebar, emptySidebar} from "./sidebar";
 import { checkTask, uncheckTask } from "./checkTask";
 import { changeDate } from "./changeDate";
+import { changePriority } from "./changePriority";
 
 const header = createElements('h1', 'header', 'Home');
 let homeTasks = [];
@@ -53,6 +54,13 @@ document.addEventListener('change', e => {
 document.addEventListener('change', e => {
   if(e.target.matches('.side-date')){
     changeDate(homeTasks);
+    renderTasks(homeTasks);
+  }
+})
+
+document.addEventListener('change', e => {
+  if(e.target.matches('.side-priority')){
+    changePriority(homeTasks);
     renderTasks(homeTasks);
   }
 })
