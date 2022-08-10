@@ -55,7 +55,7 @@ emptyEle.style.alignSelf = 'center'
 function emptySidebar(arr, index){
   let task = arr[index];
 
-  if(sidebar.innerHTML === ''){
+  if(task === undefined){
     sidebar.append(emptyEle);
 
   }else if(task.title === sideTitle.textContent.split(' ')[1]){
