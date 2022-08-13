@@ -82,7 +82,7 @@ body{
   height: auto;
   filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(321deg) brightness(106%) contrast(100%);
 }
-.nav-list div{
+.nav-list > div{
   display: flex;
   justify-content: flex-start;
   gap: 10px;
@@ -92,7 +92,7 @@ body{
   width: 100%;
   padding: 5px 16px;
 }
-.nav-list div:hover{
+.nav-list > div:hover{
   background-color:#ff00006c ;
 }
 .nav-list h3{
@@ -109,7 +109,7 @@ body{
   margin-bottom: 10px;
 }
 
-.container{
+.main{
   grid-column: 2/-1;
   grid-row: 2/-1;
   position: relative;
@@ -185,12 +185,12 @@ body{
 .task-element .task-title:hover{
   text-decoration: underline;
 }
-.task-element .task-title.checked, .task-priority.checked{
+.task-element .task-title.checked, .task-priority.checked, .task-due-date.checked{
   text-decoration: line-through;
   opacity: 0.5;
   cursor: default;
 }
-.tasks-container .addTaskBtn{
+.tasks-container .add-task-btn{
   background-color: #808080;
   font-size: 2.3rem;
   width: 200px;
@@ -217,5 +217,60 @@ body{
   flex-direction: column;
   gap: 10px;
   font-size: 1.3rem;
+}
+.sidebar > div{
+  display: none;
+  gap: 5px;
+}
 
+.sidebar > h1{
+  color: gray;
+  text-align: center;
+  margin: auto;
+  align-self: center;
+}
+.projects{
+  position: relative;
+}
+.projects:hover{
+  cursor: default;
+}
+.projects > span{
+  position: absolute;
+  bottom: -250px;
+  left: 16px;
+  width: 180px;
+  height: 250px;
+  background-color: chartreuse;
+  visibility: hidden;
+  color: black;
+}
+.input-container{
+  position: relative;
+}
+.input-container > input{
+  height: 22px;
+  width: 75%;
+}
+.input-container .add-project{
+  position: absolute;
+  top: 0;
+  right: 22px;
+  background-image: url('../img/check-bold.svg');
+  background-size: cover;
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.input-container .cancel-project{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url('../img/x-svgrepo-com.svg');
+  background-size: cover;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }

@@ -1,30 +1,8 @@
-import { sidebar } from "./DOM";
-import {createElements} from './imports';
-
-let sideTitle = createElements('div', 'side-title');
-let sideDescription = createElements('div', 'side-description');
-
-let sideDate = createElements('input', 'side-date');
-sideDate.type = 'date';
-let dateLabel = createElements('div', 'date-label', 'Due Date:')
-let dateDiv = createElements('div', 'side-date-div');
-dateDiv.append(dateLabel, sideDate);
-
-let priorityDiv = createElements('div', 'side-priority-div');
-let priorityLabel = createElements('div', 'side-priority-label');
-priorityLabel.textContent = 'Priority';
-let sidePriority = createElements('select', 'side-priority');
-let high = createElements('option',undefined, 'High');
-let medium = createElements('option',undefined, 'Medium');
-let low = createElements('option',undefined, 'Low');
-sidePriority.append(high, medium, low);
-priorityDiv.append(priorityLabel, sidePriority)
-let priorities = [high, medium, low]
-
-let sideNote = createElements('div', 'side-note');
+import {sideTitle, sideDescription, sideDate, priorities, sideNote, sidePriority, dateDiv, priorityDiv, emptyElement} from "./DOM";
 
 function populateSidebar(arr, index){
   let task = arr[index];
+
   sideTitle.textContent = `Title: ${task.title}`;
   sideDescription.textContent = `Description: ${task.description}`;
   sideDate.value = task.dueDate;
@@ -33,34 +11,38 @@ function populateSidebar(arr, index){
     item.removeAttribute('selected')
   })
   if(task.priority == 'High'){
-    high.setAttribute('selected', 'selected');
+    priorities[0].setAttribute('selected', 'selected');
   }else if(task.priority == 'Medium'){
-    medium.setAttribute('selected', 'selected');
+    priorities[1].setAttribute('selected', 'selected');
   }else{
-    low.setAttribute('selected', 'selected');
+    priorities[2].setAttribute('selected', 'selected');
   }
 
   sideNote.textContent = `Notes: ${task.notes}`;
 
-  sidebar.innerHTML = '';
-  sidebar.append(sideTitle, dateDiv, sideDescription, priorityDiv, sideNote);
+  sideTitle.style.display = 'flex';
+  sideDescription.style.display = 'flex';
+  dateDiv.style.display = 'flex';
+  priorityDiv.style.display = 'flex';
+  sideNote.style.display = 'flex';
+  emptyElement.style.display = 'none'
 }
 
-const emptyEle = createElements('h1', 'empty', 'Select a task');
-emptyEle.style.color = 'gray';
-emptyEle.style.textAlign = 'center'
-emptyEle.style.margin = 'auto';
-emptyEle.style.alignSelf = 'center'
 
 function emptySidebar(arr, index){
   let task = arr[index];
-
+  
   if(task === undefined){
-    sidebar.append(emptyEle);
+    emptyElement.style.display = 'block'
 
   }else if(task.title === sideTitle.textContent.split(' ')[1]){
-    sidebar.innerHTML = '';
-    sidebar.append(emptyEle);
+    sideTitle.style.display = 'none';
+    sideDescription.style.display = 'none';
+    dateDiv.style.display = 'none';
+    priorityDiv.style.display = 'none';
+    sideNote.style.display = 'none';
+    emptyElement.style.display = 'block'
   }
 }
+
 export {populateSidebar, emptySidebar, sideTitle, sideDate, sidePriority};

@@ -6,7 +6,6 @@ function showForm(){
   formContainer.style.visibility = 'visible';
   taskForm.style.transform = 'scale(1)';
 }
-
 function hideForm(){
   taskForm.style.transform = 'scale(0)';
   formContainer.style.visibility = 'hidden';
@@ -14,7 +13,6 @@ function hideForm(){
 
 
 function bindEventsToForm(arr){
-
   addBtn.addEventListener('click', () => {
     addTaskToArr(arr);
     renderTasks(arr);
@@ -25,7 +23,6 @@ function bindEventsToForm(arr){
   cancelBtn.addEventListener('click', () => {
     hideForm();
   });
-  
 }
 
 export {showForm, hideForm, bindEventsToForm};
