@@ -19,7 +19,7 @@ body{
   display: grid;
   grid-template-columns: 1fr auto auto;
   grid-template-rows: 1fr;
-  background-color: lightblue;
+  background-color: #3adcb5;
   height: 55px;
   padding: 5px;
   gap: 30px;
@@ -64,7 +64,7 @@ body{
 .nav-list{
   grid-column: 1/2;
   grid-row: 1/-1;
-  background-color: rgb(16, 16, 32);
+  background-color: #333;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -73,14 +73,19 @@ body{
   gap: 30px;
   transition-duration: 0.2s;
   width: 65px;
+  z-index: 100;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.425);
 }
-.nav-list:hover{
-  width: 200px;
-}
+
 .nav-list .icon{
   width: 30px;
   height: auto;
   filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(321deg) brightness(106%) contrast(100%);
+}
+.nav-list .arrow-icon{
+  width: 16px;
+  visibility: hidden;
+  cursor: pointer;
 }
 .nav-list > div{
   display: flex;
@@ -92,8 +97,13 @@ body{
   width: 100%;
   padding: 5px 16px;
 }
-.nav-list > div:hover{
-  background-color:#ff00006c ;
+.nav-list > div:hover, .clicked{
+  background-color:#3adcb5;
+  color: #333 !important;
+}
+
+.nav-list img.hovered{
+  filter: invert(19%) sepia(11%) saturate(2%) hue-rotate(117deg) brightness(93%) contrast(95%) !important;
 }
 .nav-list h3{
   visibility: hidden;
@@ -116,6 +126,7 @@ body{
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: auto 1fr;
+  background-color: #f2f2f2;
 }
 .form-container{
   position: absolute;
@@ -239,11 +250,31 @@ body{
   position: absolute;
   bottom: -250px;
   left: 16px;
-  width: 180px;
+  width: 170px;
   height: 250px;
-  background-color: chartreuse;
+  border: 2px solid rgb(99, 98, 98);
+  border-style: solid;
   visibility: hidden;
-  color: black;
+  color: white;
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 3px 0;
+}
+.add-project-btn{
+  border: 2px solid rgb(99, 98, 98);
+  cursor: pointer;
+  padding: 3px 0;
+  text-align: center;
+  transition-duration: 0.2s;
+  color: white;
+  width: 150px;
+  align-self: center;
+  margin-top: 3px;
+}
+.add-project-btn:hover{
+  background-color: rgb(99, 98, 98);
 }
 .input-container{
   position: relative;
@@ -251,26 +282,40 @@ body{
 .input-container > input{
   height: 22px;
   width: 75%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgb(99, 98, 98);
+  outline: none;
+  font-size: 0.9rem;
 }
 .input-container .add-project{
   position: absolute;
-  top: 0;
-  right: 22px;
+  top: 4px;
+  right: 16px;
   background-image: url('../img/check-bold.svg');
   background-size: cover;
-  background-color: green;
-  width: 20px;
-  height: 20px;
+  background-color: #3adcb5;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
 }
 .input-container .cancel-project{
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 4px;
+  right: -3px;
   background-image: url('../img/x-svgrepo-com.svg');
   background-size: cover;
-  background-color: red;
-  width: 20px;
-  height: 20px;
+  background-color: #fc2d2d;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
+}
+.custom-project{
+  cursor: pointer;
+  text-align: center;
+  padding: 2px 0;
+}
+.custom-project:hover{
+  background-color: rgb(27, 27, 27);
 }

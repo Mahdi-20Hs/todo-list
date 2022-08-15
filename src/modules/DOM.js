@@ -40,6 +40,19 @@ let emptyElement = document.querySelector('.sidebar > h1');
 
 export {sidebar, sideTitle, sideDescription, sideDate, priorities, sideNote, sidePriority, dateDiv, priorityDiv, emptyElement}
 
+//elements from nav-list //
+const navList = document.querySelector('.nav-list');
+const navListDivs = document.querySelectorAll('.nav-list > div');
+const navListIcons = document.querySelectorAll('.navlist .icon');
+const navListHeaders = document.querySelectorAll('.nav-list h3');
+const homeBtn = document.querySelector('.home');
+const weekBtn = document.querySelector('.week');
+const todayBtn = document.querySelector('.today');
+const projectsBtn = document.querySelector('.projects');
+const projectsContainer = document.querySelector('.projects-container');
+const arrowBtn = document.querySelector('.arrow-icon');
+
+export { navList, navListHeaders, homeBtn, weekBtn, todayBtn, projectsBtn, projectsContainer, navListDivs, navListIcons, arrowBtn};
 
 // functions used in different modules //
 function createElements(type, className, content){

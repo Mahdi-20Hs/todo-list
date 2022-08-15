@@ -1,21 +1,15 @@
 import './assets/styles/main.css';
 import { renderTasks } from './modules/renderTasks';
-import { pageTitle, addTaskBtn, createElements} from './modules/DOM';
+import { pageTitle, addTaskBtn, createElements, navList, navListHeaders, homeBtn, weekBtn, todayBtn, projectsBtn, projectsContainer, arrowBtn } from './modules/DOM';
 import { bindEventsToForm, showForm } from './modules/taskForm';
 import { emptySidebar, populateSidebar } from './modules/sidebar';
 import { deleteTask } from './modules/deleteTask';
 import { checkTask, uncheckTask } from './modules/checkTask';
 import { changeDate } from './modules/changeDate';
 import { changePriority } from './modules/changePriority';
+import { changeStyle } from './modules/changeStyle';
 
-const navList = document.querySelector('.nav-list');
-const navListHeaders = document.querySelectorAll('.nav-list h3');
-const homeBtn = document.querySelector('.home');
-const weekBtn = document.querySelector('.week');
-const todayBtn = document.querySelector('.today');
-const projectsBtn = document.querySelector('.projects');
-const projectsContainer = document.querySelector('.projects-container');
-
+changeStyle()
 
 function findObject(target){
   let obj;
@@ -39,31 +33,11 @@ function findIndex(arr, target){
 }
 
 
-navList.addEventListener('mouseover', () => {
-  navListHeaders.forEach((header) => {
-    header.style.visibility = 'visible';
-  })
-})
-navList.addEventListener('mouseout', () => {
-  navListHeaders.forEach((header) => {
-    header.style.visibility = 'hidden';
-  })
-})
-
-
 let addProjectBtn = createElements('div', 'add-project-btn', 'Add new project');
 projectsContainer.append(addProjectBtn);
-projectsBtn.addEventListener('mouseover', () => {
-  projectsContainer.style.visibility = 'visible';
-})
-
-projectsBtn.addEventListener('mouseout', () => {
-  projectsContainer.style.visibility = 'hidden';
-})
 
 
 addProjectBtn.addEventListener('click', () => {
-
   projectsContainer.removeChild(projectsContainer.lastChild);
   let div = createElements('div', 'input-container');
 
