@@ -18,7 +18,7 @@ export {title, description, priority, notes, dueDate};
 // elements from main // 
 let container = document.querySelector('.main');
 let tasksContainer = document.querySelector('.tasks-container');
-let addTaskBtn = createElements('div', 'add-task-btn', '+');
+let addTaskBtn = createElements('div', 'add-task-btn', 'Add a new task');
 let pageTitle = document.querySelector('.project-title');
 
 export {tasksContainer,  addTaskBtn, container, pageTitle};
