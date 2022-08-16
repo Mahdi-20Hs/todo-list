@@ -1,16 +1,15 @@
 import './assets/styles/main.css';
 import { renderTasks } from './modules/renderTasks';
-import { pageTitle, addTaskBtn, createElements, navList, navListHeaders, homeBtn, weekBtn, todayBtn, projectsBtn, projectsContainer, arrowBtn } from './modules/DOM';
+import { pageTitle, addTaskBtn, createElements, homeBtn, weekBtn, todayBtn, projectsContainer } from './modules/DOM';
 import { bindEventsToForm, showForm } from './modules/taskForm';
 import { emptySidebar, populateSidebar } from './modules/sidebar';
 import { deleteTask } from './modules/deleteTask';
 import { checkTask, uncheckTask } from './modules/checkTask';
 import { changeDate } from './modules/changeDate';
 import { changePriority } from './modules/changePriority';
-import { changeStyle } from './modules/changeStyle';
+import { changeStyle, onloadStyle } from './modules/changeStyle';
 
 changeStyle()
-
 function findObject(target){
   let obj;
   for(let i = 0; i < pages.length; i++){
@@ -31,6 +30,19 @@ function findIndex(arr, target){
   }
   return index;
 }
+function checkProjectName(name){
+  let projectNames = Array.from(document.querySelectorAll('.custom-project'));
+  for(let i in projectNames){
+    if(projectNames[i].textContent === name){
+      alert('Choose a different name');
+      return false
+    }else{
+      return true
+    }
+  }
+  return true
+}
+
 
 
 let addProjectBtn = createElements('div', 'add-project-btn', 'Add new project');
@@ -38,6 +50,7 @@ projectsContainer.append(addProjectBtn);
 
 
 addProjectBtn.addEventListener('click', () => {
+
   projectsContainer.removeChild(projectsContainer.lastChild);
   let div = createElements('div', 'input-container');
 
@@ -83,18 +96,6 @@ document.addEventListener('click', e => {
   }
 })
 
-function checkProjectName(name){
-  let projectNames = Array.from(document.querySelectorAll('.custom-project'));
-  for(let i in projectNames){
-    if(projectNames[i].textContent === name){
-      alert('Choose a different name');
-      return false
-    }else{
-      return true
-    }
-  }
-  return true
-}
 
 document.addEventListener('click', e => {
   if(e.target.matches('.cancel-project')){
@@ -130,6 +131,7 @@ window.onload = function(){
   pageTitle.textContent = homePage.title;
   renderTasks(homePage.tasks);
   emptySidebar([], 0);
+  onloadStyle()
 };
 
 homeBtn.addEventListener('click', () => {

@@ -35,7 +35,7 @@ function emptySidebar(arr, index){
   if(task === undefined){
     emptyElement.style.display = 'block'
 
-  }else if(task.title === sideTitle.textContent.split(' ')[1]){
+  }else if(task.title === sideTitle.textContent){
     titleDiv.style.display = 'none';
     descriptionDiv.style.display = 'none';
     dateDiv.style.display = 'none';

@@ -26,7 +26,6 @@ function createTaskElement(task){
 
 function renderTasks(tasks){
   tasksContainer.innerHTML = '';
-
   for(let i in tasks){
     let taskElement = createTaskElement(tasks[i]);
     tasksContainer.appendChild(taskElement);

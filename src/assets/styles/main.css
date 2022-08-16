@@ -13,54 +13,22 @@ body{
   grid-template-rows: auto 1fr;
 }
 
-.top-section{
+.header{
   grid-column: 2/-1;
   grid-row: 1/2;
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  grid-template-rows: 1fr;
-  background-color: #3adcb5;
+  background-color: #333;
+  color: white;
   height: 55px;
   padding: 5px;
-  gap: 30px;
-}
-
-.top-section .search-section{
-  grid-column: 2/3;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
-}
-.search-section .search-icon{
-  width: 30px;
-  height: auto;
-  cursor: pointer;
-  filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(321deg) brightness(106%) contrast(100%);
-}
-.search-section .search-bar{
-  height: 30px;
-  width: 200px;
-  background-color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  outline: none;
-  transition-duration: 0.3s;
-}
-.search-section .search-bar:focus{
-  width: 400px;
-}
-.top-section .account{
-  grid-column: 3/-1;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-image: url('../img/photo_2022-06-30_18-42-06.jpg');
-  background-size: cover;
-  cursor: pointer;
-  margin-right: 10px;
+  font-size: 2.5rem;
+  z-index: 90;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.425);
 }
 
+/* nav-list styles */
 .nav-list{
   grid-column: 1/2;
   grid-row: 1/-1;
@@ -76,7 +44,6 @@ body{
   z-index: 100;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.425);
 }
-
 .nav-list .icon{
   width: 30px;
   height: auto;
@@ -101,7 +68,6 @@ body{
   background-color:#3adcb5;
   color: #333 !important;
 }
-
 .nav-list img.hovered{
   filter: invert(19%) sepia(11%) saturate(2%) hue-rotate(117deg) brightness(93%) contrast(95%) !important;
 }
@@ -191,10 +157,11 @@ body{
   padding: 2px 0;
   font-size: 1rem;
 }
-.custom-project:hover{
+.custom-project:hover:not(.custom-project.clicked){
   background-color: rgb(27, 27, 27);
 }
 
+/* main styles */
 .main{
   grid-column: 2/-1;
   grid-row: 2/-1;
@@ -204,6 +171,8 @@ body{
   grid-template-rows: auto 1fr;
   background-color: #f2f2f2;
 }
+
+/* form styles */
 .form-container{
   position: absolute;
   width: 100%;
@@ -271,6 +240,8 @@ body{
 .form-btns .cancel-btn:hover{
   background-color: #e62929;
 }
+
+/* tasks-container styles */
 .project-title{
   padding: 20px 0 0 20px;
 }
@@ -320,7 +291,6 @@ body{
   opacity: 0.5;
   cursor: default;
 }
-
 .task-delete-btn{
   background-image: url('../img/trash-can-outline.svg');
   background-size: cover;
@@ -334,6 +304,7 @@ body{
   filter: invert(9%) sepia(96%) saturate(5625%) hue-rotate(2deg) brightness(97%) contrast(113%);
 }
 
+/* sidebar styles */
 .sidebar{
   grid-column: 2/-1;
   grid-row: 2/-1;

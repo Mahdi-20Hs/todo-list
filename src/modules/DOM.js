@@ -20,8 +20,10 @@ let container = document.querySelector('.main');
 let tasksContainer = document.querySelector('.tasks-container');
 let addTaskBtn = createElements('div', 'add-task-btn', 'Add a new task');
 let pageTitle = document.querySelector('.project-title');
+let home = document.querySelector('.home');
+let homeIcon = document.querySelector('.home img');
 
-export {tasksContainer,  addTaskBtn, container, pageTitle};
+export {tasksContainer,  addTaskBtn, container, pageTitle, home, homeIcon};
 
 //elements from sidebar //
 let sidebar = document.querySelector('.sidebar');

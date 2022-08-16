@@ -10,6 +10,7 @@ function CreateTask(){
       return;
     }
   }
+  
   task.title = title.value;
   task.dueDate = dueDate.value;
   task.description = description.value;
