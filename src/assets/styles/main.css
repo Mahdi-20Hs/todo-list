@@ -200,7 +200,7 @@ body{
   grid-row: 2/-1;
   position: relative;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 350px;
   grid-template-rows: auto 1fr;
   background-color: #f2f2f2;
 }
@@ -208,7 +208,7 @@ body{
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  z-index: 120;
   background-color: rgba(0, 0, 0, 0.37);
   display: flex;
   justify-content: center;
@@ -216,7 +216,7 @@ body{
   visibility: hidden;
 }
 .task-form{
-  width: 30%;
+  width: 30vw;
   height: 350px;
   background-color: #f2f2f2;
   display: grid;
@@ -233,6 +233,8 @@ body{
   outline: none;
   border-radius: 5px;
   border: 1px solid rgb(161, 161, 161);
+  font-size: 1.1rem;
+  resize: none;
 }
 .task-form label{
   font-size: 1.1rem;
@@ -243,7 +245,8 @@ body{
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: 0 -16px -16px -16px;
+  margin: -16px;
+  margin-top: 10px;
   padding: 10px 0px;
   background-color: #333;
 }
@@ -286,7 +289,7 @@ body{
   padding: 5px 5px;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.26);
   width: 70%;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition-duration: 0.2s;
 }
@@ -336,12 +339,16 @@ body{
   grid-row: 2/-1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   font-size: 1.3rem;
+  background-color: white;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  box-shadow: -1px -2px 5px rgba(0, 0, 0, 0.26);
 }
 .sidebar > div{
   display: none;
-  gap: 5px;
+  grid-template-columns: 1fr 2fr;
 }
 
 .sidebar > h1{
@@ -349,4 +356,12 @@ body{
   text-align: center;
   margin: auto;
   align-self: center;
+}
+.side-description, .side-note{
+  font-size: 1.1rem;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+.side-priority, .side-date{
+  font-size: 1.2rem;
 }

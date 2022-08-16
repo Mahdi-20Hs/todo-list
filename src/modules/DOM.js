@@ -25,20 +25,28 @@ export {tasksContainer,  addTaskBtn, container, pageTitle};
 
 //elements from sidebar //
 let sidebar = document.querySelector('.sidebar');
+
+let titleDiv = document.querySelector('.title-div');
 let sideTitle = document.querySelector('.side-title');
+
+let descriptionDiv = document.querySelector('.description-div');
 let sideDescription = document.querySelector('.side-description');
-let sideDate = document.querySelector('.side-date');
+
 let dateDiv = document.querySelector('.date-div');
+let sideDate = document.querySelector('.side-date');
+
+let priorityDiv = document.querySelector('.priority-div');
 let sidePriority = document.querySelector('.side-priority');
-let priorityDiv = document.querySelector('.priority-div')
 let high = document.querySelector('.high');
 let medium = document.querySelector('.medium');
 let low = document.querySelector('.low');
+
+let noteDiv = document.querySelector('.note-div');
 let sideNote = document.querySelector('.side-note');
 let priorities = [high, medium, low];
 let emptyElement = document.querySelector('.sidebar > h1');
 
-export {sidebar, sideTitle, sideDescription, sideDate, priorities, sideNote, sidePriority, dateDiv, priorityDiv, emptyElement}
+export {sidebar,titleDiv, sideTitle, descriptionDiv, sideDescription, dateDiv, sideDate, priorityDiv, sidePriority, priorities, noteDiv, sideNote, emptyElement}
 
 //elements from nav-list //
 const navList = document.querySelector('.nav-list');

@@ -1,10 +1,10 @@
-import {sideTitle, sideDescription, sideDate, priorities, sideNote, sidePriority, dateDiv, priorityDiv, emptyElement} from "./DOM";
+import {titleDiv, sideTitle, descriptionDiv, sideDescription, dateDiv, sideDate, priorityDiv, sidePriority, priorities, noteDiv, sideNote, emptyElement} from "./DOM";
 
 function populateSidebar(arr, index){
   let task = arr[index];
 
-  sideTitle.textContent = `Title: ${task.title}`;
-  sideDescription.textContent = `Description: ${task.description}`;
+  sideTitle.textContent = `${task.title}`;
+  sideDescription.textContent = `${task.description}`;
   sideDate.value = task.dueDate;
 
   priorities.forEach((item) => {
@@ -18,13 +18,13 @@ function populateSidebar(arr, index){
     priorities[2].setAttribute('selected', 'selected');
   }
 
-  sideNote.textContent = `Notes: ${task.notes}`;
+  sideNote.textContent = `${task.notes}`;
 
-  sideTitle.style.display = 'flex';
-  sideDescription.style.display = 'flex';
-  dateDiv.style.display = 'flex';
-  priorityDiv.style.display = 'flex';
-  sideNote.style.display = 'flex';
+  titleDiv.style.display = 'grid';
+  descriptionDiv.style.display = 'block';
+  dateDiv.style.display = 'grid';
+  priorityDiv.style.display = 'grid';
+  noteDiv.style.display = 'block';
   emptyElement.style.display = 'none'
 }
 
@@ -36,11 +36,11 @@ function emptySidebar(arr, index){
     emptyElement.style.display = 'block'
 
   }else if(task.title === sideTitle.textContent.split(' ')[1]){
-    sideTitle.style.display = 'none';
-    sideDescription.style.display = 'none';
+    titleDiv.style.display = 'none';
+    descriptionDiv.style.display = 'none';
     dateDiv.style.display = 'none';
     priorityDiv.style.display = 'none';
-    sideNote.style.display = 'none';
+    noteDiv.style.display = 'none';
     emptyElement.style.display = 'block'
   }
 }
