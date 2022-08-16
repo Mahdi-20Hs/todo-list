@@ -46,6 +46,22 @@ addProjectBtn.addEventListener('click', () => {
   let cancelProject = createElements('span', 'cancel-project');
   div.append(projectInput, addProject, cancelProject);
 
+  projectInput.addEventListener('keypress', e => {
+    if(e.key === 'Enter'){
+      let projectTitle = document.querySelector('.project-input').value;
+      if(checkProjectName(projectTitle) === true){
+        let project = {};
+        project.title = projectTitle;
+        project.tasks = [];
+        pages.push(project);
+
+        let projectElement = createElements('div', `custom-project`, `${projectTitle}`);
+        projectsContainer.removeChild(projectsContainer.lastChild);
+        projectsContainer.append(projectElement);
+        projectsContainer.append(addProjectBtn);
+      }
+    }
+  })
   projectsContainer.append(div);
 });
 
@@ -53,17 +69,32 @@ document.addEventListener('click', e => {
   if(e.target.matches('.add-project')){
     let projectTitle = document.querySelector('.project-input').value;
 
-    let project = {};
-    project.title = projectTitle;
-    project.tasks = []
-    pages.push(project);
+    if(checkProjectName(projectTitle) === true){
+      let project = {};
+      project.title = projectTitle;
+      project.tasks = []
+      pages.push(project);
 
-    let projectElement = createElements('div', `custom-project`, `${projectTitle}`);
-    projectsContainer.removeChild(projectsContainer.lastChild);
-    projectsContainer.append(projectElement);
-    projectsContainer.append(addProjectBtn);
+      let projectElement = createElements('div', `custom-project`, `${projectTitle}`);
+      projectsContainer.removeChild(projectsContainer.lastChild);
+      projectsContainer.append(projectElement);
+      projectsContainer.append(addProjectBtn);
+    }
   }
 })
+
+function checkProjectName(name){
+  let projectNames = Array.from(document.querySelectorAll('.custom-project'));
+  for(let i in projectNames){
+    if(projectNames[i].textContent === name){
+      alert('Choose a different name');
+      return false
+    }else{
+      return true
+    }
+  }
+  return true
+}
 
 document.addEventListener('click', e => {
   if(e.target.matches('.cancel-project')){

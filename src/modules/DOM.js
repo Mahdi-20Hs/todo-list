@@ -42,7 +42,7 @@ export {sidebar, sideTitle, sideDescription, sideDate, priorities, sideNote, sid
 
 //elements from nav-list //
 const navList = document.querySelector('.nav-list');
-const navListDivs = document.querySelectorAll('.nav-list > div');
+const navListDivs = document.querySelectorAll('.nav-list-divs');
 const navListIcons = document.querySelectorAll('.navlist .icon');
 const navListHeaders = document.querySelectorAll('.nav-list h3');
 const homeBtn = document.querySelector('.home');
@@ -51,8 +51,9 @@ const todayBtn = document.querySelector('.today');
 const projectsBtn = document.querySelector('.projects');
 const projectsContainer = document.querySelector('.projects-container');
 const arrowBtn = document.querySelector('.arrow-icon');
+const projectInput = document.querySelector('.project-input');
 
-export { navList, navListHeaders, homeBtn, weekBtn, todayBtn, projectsBtn, projectsContainer, navListDivs, navListIcons, arrowBtn};
+export { navList, navListHeaders, homeBtn, weekBtn, todayBtn, projectsBtn, projectsContainer, navListDivs, navListIcons, arrowBtn, projectInput};
 
 // functions used in different modules //
 function createElements(type, className, content){

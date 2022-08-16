@@ -1,4 +1,4 @@
-import { navListDivs, navListIcons, navList, navListHeaders, arrowBtn, projectsContainer } from "./DOM";
+import { navListDivs, navListIcons, navList, navListHeaders, arrowBtn, projectsContainer, projectInput } from "./DOM";
 
 function changeStyle(){
   navListDivs.forEach((div) => {

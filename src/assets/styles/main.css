@@ -97,7 +97,7 @@ body{
   width: 100%;
   padding: 5px 16px;
 }
-.nav-list > div:hover, .clicked{
+.nav-list-divs:hover, .clicked{
   background-color:#3adcb5;
   color: #333 !important;
 }
@@ -249,16 +249,14 @@ body{
 .projects > span{
   position: absolute;
   bottom: -250px;
-  left: 16px;
-  width: 170px;
+  left: 32px;
+  width: 150px;
   height: 250px;
-  border: 2px solid rgb(99, 98, 98);
-  border-style: solid;
   visibility: hidden;
   color: white;
   display: flex;
-  gap: 3px;
   flex-direction: column;
+  gap: 3px;
   overflow-y: auto;
   padding: 3px 0;
 }
@@ -272,6 +270,7 @@ body{
   width: 150px;
   align-self: center;
   margin-top: 3px;
+  font-size: 1rem;
 }
 .add-project-btn:hover{
   background-color: rgb(99, 98, 98);
@@ -281,7 +280,7 @@ body{
 }
 .input-container > input{
   height: 22px;
-  width: 75%;
+  width: 100%;
   background-color: transparent;
   color: white;
   border: none;
@@ -289,32 +288,30 @@ body{
   outline: none;
   font-size: 0.9rem;
 }
-.input-container .add-project{
+.input-container span{
   position: absolute;
-  top: 4px;
-  right: 16px;
-  background-image: url('../img/check-bold.svg');
+  top: 30px;
   background-size: cover;
-  background-color: #3adcb5;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
 }
+.input-container .add-project{
+  background-image: url('../img/check-bold.svg');
+  background-color: #3adcb5;
+  left: 0px;
+}
+
 .input-container .cancel-project{
-  position: absolute;
-  top: 4px;
-  right: -3px;
   background-image: url('../img/x-svgrepo-com.svg');
-  background-size: cover;
   background-color: #fc2d2d;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+  right: 0px;
 }
 .custom-project{
   cursor: pointer;
   text-align: center;
   padding: 2px 0;
+  font-size: 1rem;
 }
 .custom-project:hover{
   background-color: rgb(27, 27, 27);
